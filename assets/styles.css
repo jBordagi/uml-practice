@@ -1,0 +1,14 @@
+/**
+*CSS rules for myApp
+**/
+[myApp] h2 {
+    color:rgb(206, 125, 58);
+
+}
+
+[myApp] h2 i {
+    color: rgb(238,125,145);
+    transform: scale(1);
+    transition: all 0.5s 0s ease-in;
+
+}
