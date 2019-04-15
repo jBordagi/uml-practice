@@ -3,7 +3,8 @@
 <!doctype html>
 <html lang="fr">
     <head>
-    
+        <meta charset="utf-8">
+        
         <title> Hello jQuery !</title>
 
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
@@ -43,6 +44,7 @@
 // ci dessous cible tout les evenement de la classe company
             $(' .company') .on(
                 "click",
+// ci dessous c'est une call back fonction retournée par le gestionnaire d'évenement click
                 (event)=> { alert('tu as cliqué sur moi')}
             );
         </script>
