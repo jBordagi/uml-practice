@@ -1,0 +1,51 @@
+
+<!---premiere ligne definit le type de document-->
+<!doctype html>
+<html lang="fr">
+    <head>
+    
+        <title> Hello jQuery !</title>
+
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+        <header>
+            <h1></h1>
+        </header>
+        <main>
+            <div class="company">
+            <h2>Aélion</h2>
+            <address>
+                <p>95, chemin de gabardie</p>
+                <p><span class="zipcode">31000</span> Toulouse</span></p>
+            </address>
+            </div>
+
+            <div class="company">
+            <h2>CapGemini</h2>
+            <address>
+                <p>10 rue des ESN</p>
+                <p><span class="zipcode">31600</span> Blagnac</span></p>
+            </address>
+            </div>
+
+        <script>
+
+        
+// premiere ligne en langage jquery apres en vert c'ets en natif
+            $('h1').html('Hello jQuery');
+
+            //onst monH1 = document.queryselector('h1');
+            //monH1.innerHTML = 'Hello jQuery natif JS';
+
+// ci dessous cible tout les evenement de la classe company
+            $(' .company') .on(
+                "click",
+                (event)=> { alert('tu as cliqué sur moi')}
+            );
+        </script>
+    </body>
+
+</html>

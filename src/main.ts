@@ -2,7 +2,7 @@ import {CompanyModel} from './models/company.model';
 import {ToHtml} from './utils/to-html';
 
 import * as $ from 'jquery';
-/**
+/**ok
  * @name main
  * @desc Point d'entrée dans l'application
  * @author Aélion
