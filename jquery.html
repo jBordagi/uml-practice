@@ -4,7 +4,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        
+
         <title> Hello jQuery !</title>
 
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
@@ -35,17 +35,19 @@
         <script>
 
         
-// premiere ligne en langage jquery apres en vert c'ets en natif
+// premiere ligne en langage jquery apres en vert c'est en natif
             $('h1').html('Hello jQuery');
 
-            //onst monH1 = document.queryselector('h1');
+            //const monH1 = document.queryselector('h1');
             //monH1.innerHTML = 'Hello jQuery natif JS';
 
-// ci dessous cible tout les evenement de la classe company
+// ci dessous cible tout les evenement de la classe company fonction .on signifie se mettre à l'écoute
             $(' .company') .on(
                 "click",
 // ci dessous c'est une call back fonction retournée par le gestionnaire d'évenement click
-                (event)=> { alert('tu as cliqué sur moi')}
+                function(ev) {
+                    $(this).css('background-color','red');    
+                }
             );
         </script>
     </body>
