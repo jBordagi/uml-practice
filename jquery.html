@@ -7,6 +7,8 @@
 
         <title> Hello jQuery !</title>
 
+        <link href="./assets/styles.css" rel="stylesheet">
+
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 
     </head>
@@ -22,6 +24,14 @@
                 <p>95, chemin de gabardie</p>
                 <p><span class="zipcode">31000</span> Toulouse</span></p>
             </address>
+         <!-- la liste des contacts-->
+            <ul>
+                <li>M. James Bond</li>
+                <li>M. Gandalf</li>
+                <li>M. SHeldon</li>
+                <li>M. Thierry</li>
+            </ul>
+    
             </div>
 
             <div class="company">
@@ -30,6 +40,15 @@
                 <p>10 rue des ESN</p>
                 <p><span class="zipcode">31600</span> Blagnac</span></p>
             </address>
+
+                    <!-- la liste des contacts-->
+            <ul>
+                <li>M. Jean Talut</li>
+                <li>M. Jean Talut</li>
+                <li>M. Jean Talut</li>
+                <li>M. Jean Talut</li>
+            </ul>
+
             </div>
 
         <script>
@@ -42,13 +61,46 @@
             //monH1.innerHTML = 'Hello jQuery natif JS';
 
 // ci dessous cible tout les evenement de la classe company fonction .on signifie se mettre à l'écoute
-            $(' .company') .on(
-                "click",
+            $('.company') .on(
+                'click',
 // ci dessous c'est une call back fonction retournée par le gestionnaire d'évenement click
-                function(ev) {
+                function(event) {
+                // dans tous les cas on eleve la classe selected
+                    const theOne = $(this); //l'objet est cliqué
+                    let removeClass = true; // par défaut j'estime qu'il faut retirer la classe
+
+                    if (!theOne.hasClass('selected')){ // tester si l'objet n'a pas encore la 
+                        removeClass = false;
+                    }
+                    // Supprime pour tout le monde la place selected
+                    $('.company').removeClass('selected');
+                    $('.company ul') .hide();
+
+                    if (!removeClass) { // Appliquer sur l'élement ce qui doit etre fait
+                        $(this).removeClass('selected');
+                        $(this) .children('ul') .hide();    
+                    }else 
+                        $(this) .addClass('selected');
+                        $(this).children('ul').show();
+                    }
+                    
+                
+                
+                    /**               
                     $(this).css('background-color','red');    
+                // Si l'élément concerné a deja la classe .selected on l'enlève
+
+                //if(!$(this).hasCLass('selected')) {
+                    $(this).addClass('selected');
+                //} else {
+                    $(this) .removeClass('selected');
                 }
-            );
+                **/
+            
+           
+        );
+           
+        
         </script>
     </body>
 

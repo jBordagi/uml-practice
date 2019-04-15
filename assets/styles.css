@@ -10,5 +10,13 @@
     color: rgb(238,125,145);
     transform: scale(1);
     transition: all 0.5s 0s ease-in;
-
+}
+/**
+Classe spécifique pour mise en surbrillance des sociétes
+***/
+.selected {
+    background-color: blueviolet
+}
+.company ul {
+    display:none;
 }
