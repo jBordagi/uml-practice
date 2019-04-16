@@ -24,9 +24,23 @@
         let newVal= parseInt(inputField.val()) + 1;
     // Afficher dans l'interface la nouvelle valeur
         inputField.val(newVal)   
-    }
-    // TODO: Ne pas oublier d'activer le bouton
-    // TODO: Afficher un message si maximum atteint 
+        // 'activer le bouton en enlevant le disable le $ permet de chercher l'objet d'identité decrease-qty
+        const decreaseQtyBtn = $('decrease-qty');
+        decreaseQtyBtn.removeAttr('disable');
+        // la valeur est elle egale au maximum?
+        if (newVal===maxVal){
+            //si c'est le cas je désactive
+            console.log('le maximum tu as atteint, me désactiver il te faudra');
+            $(this).attr('disabled', 'disabled');
+            // TODO: Afficher un message si maximum atteint 
+            prompt('le maximum est atteint')
+
+        }
+
+    } 
+    
+    
+    
     //TODO: Désacativer le bouton + si maximum atteint
 
      }
