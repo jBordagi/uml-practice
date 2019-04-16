@@ -25,7 +25,7 @@
     // Afficher dans l'interface la nouvelle valeur
         inputField.val(newVal)   
     }
-    
+    // TODO: Ne pas oublier d'activer le bouton
     // TODO: Afficher un message si maximum atteint 
     //TODO: Désacativer le bouton + si maximum atteint
 
