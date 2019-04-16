@@ -1,4 +1,4 @@
-import {CompanyModel} from './models/company.model';
+import {CompanyModel} from '../company.model';
 import {ToHtml} from './utils/to-html';
 
 import * as $ from 'jquery';
