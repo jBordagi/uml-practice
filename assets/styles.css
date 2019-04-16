@@ -20,3 +20,6 @@ Classe spécifique pour mise en surbrillance des sociétes
 .company ul {
     display:none;
 }
+.no-display {
+    display: none;
+}

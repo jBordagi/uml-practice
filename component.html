@@ -6,6 +6,7 @@
         <title>Mon composant</title> <!---mon composant afficher dans l'onglet du navigateur-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     <link href="./node.modules/bootstrap/dist/css/bootstrap.min.css"> <!--- href= hypertexte reference le css qu'on veut suivre l'arborescence./-->
+    <link rel="stylesheet" href="./assets/styles.css">
     </head>
     <body>
     <!--- Composant counter presentation-->
@@ -16,6 +17,7 @@
                 class=" btn-outline-secondary"
                 type="button" 
                 id="decrease-qty"
+                
                 disable
                 >-</button>
               
@@ -27,6 +29,7 @@
                 placeholder="Veuillez saisir une quantité"
                 value="1"
                 data-max="10"
+                data-min="1"
                 id="quantity"
                 readonly 
             >
@@ -38,10 +41,20 @@
                 type="button"
                 id="increase-qty">+</button>
             </div>
+        
         </div>
+    <!--message utilisateur-->
+        <div class="alert alert-info alert-dismissible fade show no-display" role="alert">
+            <strong>Attention! </strong><span class= "message"></span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
         <!-- Intégration des ressources javascript-->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="./assets/my-counter.js"></script>
+       
 
     </body>
 </html>

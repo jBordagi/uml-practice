@@ -38,6 +38,11 @@ const toHtml: ToHtml = new ToHtml();
 toHtml.toPage(cap);
 toHtml.toPage(aelion);
 
+const myCounter = new myCounter();
+myCounter.setMax(10);
+myCounter.setStep(1);
+toHtml.add(counter);
+
 // Ecouter le clic dans le document le .cliclick signifie va chercher dans le doc les éclément dont l'attribut classe est clic. Queryselector prend seulement le premier element
 
 const laDiv: any = document.querySelector('.click')
