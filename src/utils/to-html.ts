@@ -9,14 +9,14 @@ export class ToHtml {
 // any c'est le type n'importe quoi. Document donne accès à tout ce qu'il y a dans le doc index.html. QUeryselector permet de piocher ce qui nous interesse dans index.html
 // tohtml.... c'est le paramètre on appel document aussi DOM Document object model
 
-        const htlmPlaceholder: any = document.querySelector('[' + ToHtml.placeholder + ']');
+        const htlmPlaceholder: JQuery = $('[' + ToHtml.placeholder + ']');
 
 // innerHTML pour aller chercher ce qu'il y a dans la page html attribut de la classe html juste le contenu avec les balises
-        let content: string = htlmPlaceholder.innerHTML;
+        let content: string = htlmPlaceholder.html();
 
 // le tostring renvoie a la methode créée dans compagny model
     content += object.toString();
-    htlmPlaceholder.innerHTML = content;
+    htlmPlaceholder.html(content);
     }
 
 }
