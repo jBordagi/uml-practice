@@ -14,4 +14,11 @@
     public abstract remove(object: T): void;
 
     public abstract get(id: number): T;
+/**
+ * Méthode concrète d'une classe abstraite
+ * @return number nombre d'éléments de la collection
+ */
+    public getSize(): number {
+        return this.repository.size;
+    }
  }

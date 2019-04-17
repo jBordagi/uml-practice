@@ -5,7 +5,7 @@
 export class ToHtml {
     private static readonly placeholder: string =  'myApp';
 
-    public toPage(object: any) {
+    public toPage(object: any, howTo: number = 1) {
 // any c'est le type n'importe quoi. Document donne accès à tout ce qu'il y a dans le doc index.html. QUeryselector permet de piocher ce qui nous interesse dans index.html
 // tohtml.... c'est le paramètre on appel document aussi DOM Document object model
 
@@ -15,8 +15,12 @@ export class ToHtml {
         let content: string = htlmPlaceholder.html();
 
 // le tostring renvoie a la methode créée dans compagny model
-    content += object.toString();
+    content += object.toString(howTo);
     htlmPlaceholder.html(content);
+    }
+    public appendToPage(object: JQuery): void{
+        const placeholder: JQuery = $('[' + ToHtml.placeholder + ']');
+        object.appendTo(placeholder);
     }
 
 }

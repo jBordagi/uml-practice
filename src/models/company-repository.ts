@@ -2,6 +2,7 @@ import {Repository} from "../utils/repository";
 import {CompanyModel} from "./company.model";
 
 // defintion d'une collection a partir d'une classe abstraite (classe abstraite duplique le meme comportement a n'importe qu'elle type de classe concrète)
+// sert a standardisé le développement de classes
 export class CompanyRepository extends Repository<CompanyModel> {
 
 /**
