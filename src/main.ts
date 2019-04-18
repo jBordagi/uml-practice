@@ -4,6 +4,9 @@ import * as $ from 'jquery';
 import { CompanyRepository } from './models/company-repository';
 import { NameStrategy } from './models/strategies/name-strategies';
 import { AllStrategy } from './models/strategies/all-strategies';
+import { Carre } from './geometrie/carre';
+import { Cercle } from './geometrie/cercle';
+import { Triangle } from './geometrie/triangle';
 /**ok
  * @name main
  * @desc Point d'entrée dans l'application
@@ -53,3 +56,29 @@ const toHtml: ToHtml = new ToHtml();
 toHtml.appendToPage(aelion.useOutputStrategy());
 toHtml.appendToPage(cap.useOutputStrategy());
 // Ecouter le clic dans le document le .cliclick signifie va chercher dans le doc les éclément dont l'attribut classe est clic. Queryselector prend seulement le premier element
+
+// Illustration des classes héritéges interfaces
+//On fait des instance (objet) de la classe, d'abord on importe la classe définissant le carré qu'on range instance grandCarre construite à partir de la classe carré
+// Carre c'est la classe (dans tous les cas dans la console il y aura marqué dans la console je suis un carré) grandCarre c'est l'objet on créer un nouvelle objet dans la classe
+const grandCarre: Carre = new Carre();
+grandCarre.dessiner();
+
+const petitCarre: Carre = new Carre();
+// demande de recalibre la machine a 50
+petitCarre.setSideLength(50);
+petitCarre.dessiner();
+
+const jeSUisUnCercle: Carre = new Carre();
+// demande de faire des carré de 100
+jeSUisUnCercle.setSideLength(100);
+jeSUisUnCercle.dessiner();
+
+//JE demande a faire des cercles de 75
+const dalleCirculaire75: Cercle = new Cercle();
+dalleCirculaire75.setDiametre(75);
+dalleCirculaire75.dessiner();
+
+// Je demande de faire des triangles de 40
+const dalleTriangulaire: Triangle = new Triangle();
+dalleTriangulaire.setKind('Equilatéral');
+dalleTriangulaire.dessiner();
