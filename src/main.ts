@@ -7,6 +7,10 @@ import { AllStrategy } from './models/strategies/all-strategies';
 import { Carre } from './geometrie/carre';
 import { Cercle } from './geometrie/cercle';
 import { Triangle } from './geometrie/triangle';
+import { Table } from './geometrie/table';
+import { Paintable } from './geometrie/paintable-interface';
+import { Catalog } from './vehicules/catalogue-repository';
+import { VehiculeFactory } from './vehicules/vehicule-factory';
 /**ok
  * @name main
  * @desc Point d'entrée dans l'application
@@ -63,6 +67,15 @@ toHtml.appendToPage(cap.useOutputStrategy());
 const grandCarre: Carre = new Carre();
 grandCarre.dessiner();
 
+const unAutreGrandCarre: Carre = new Carre();
+
+// je veux comparer les deux carrés
+if (grandCarre.compareTo(unAutreGrandCarre)===0) {
+    console.log ('Les deux carrés sont identiques');
+} else {
+    console.log ('Les deux carrés sont différents')
+}
+
 const petitCarre: Carre = new Carre();
 // demande de recalibre la machine a 50
 petitCarre.setSideLength(50);
@@ -82,3 +95,40 @@ dalleCirculaire75.dessiner();
 const dalleTriangulaire: Triangle = new Triangle();
 dalleTriangulaire.setKind('Equilatéral');
 dalleTriangulaire.dessiner();
+
+const laTable: Table = new Table(100,100);
+
+// J'envoie le chariot avec les trucs a peindre
+const toCabine: Array<Paintable> = new Array();
+toCabine.push(grandCarre);
+toCabine.push(petitCarre);
+toCabine.push(jeSUisUnCercle);
+toCabine.push(dalleCirculaire75);
+toCabine.push(dalleTriangulaire);
+toCabine.push(laTable);
+
+// Vas y let s paint it back pour chaque objet stocke dans la variable tocabine applique la peinture
+toCabine.forEach((object: any) => {
+    object.paint('red');
+}
+);
+ // Usine à véhicules
+ const catalogue: Catalog = new Catalog();
+ catalogue
+ .add(
+     (VehiculeFactory.createVehicule('Voiture', '208'))
+        .setSalePrice(15000)
+        .setManufacturingPrice(5000)
+ )
+ .add(
+    (VehiculeFactory.createVehicule('Voiture', '308'))
+        .setSalePrice(23000)
+        .setManufacturingPrice(5500)   
+ )
+ .add(
+    (VehiculeFactory.createVehicule('Moto', 'Varadero'))
+    .setSalePrice(5000)
+    .setManufacturingPrice(1500)
+ );
+ console.log(catalogue.catalogue());
+ console.log('Marge totale : ' + catalogue.getMargeTotale());

@@ -9,7 +9,7 @@ export class Cercle extends dalleFactory {
         super(); 
         this.setTypeDalle('Circulaire');
     }
-    
+
     public dessiner(): void {
         this.typeDalle = 'circulaire'
         console.log('Je suis un: ' + this.typeDalle);
@@ -19,4 +19,12 @@ export class Cercle extends dalleFactory {
     public setDiametre(diametre: number): void {
         this.diametre = diametre;
     }
+    public compareTo(object: Cercle): number {
+
+        // opérateur ternaire j'évalue si les deux object sont égale si oui 0 si non -1 permet de satisfaire l'interface qui veut un number
+        return this.diametre === object.diametre ? 0 : -1;}
+
+        public paintable(): void{
+        }
+
 }
